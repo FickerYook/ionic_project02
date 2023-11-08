@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>STUDENT</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+
+  <ion-card *ngFor="let std  of student ">
+    <img src="{{std.photo}}"/>
+    <ion-card-content>
+      <ion-card-title>
+        <h2> Fullname:  {{ std.fullname }}</h2>
+      </ion-card-title>
+      <h3>DEP:  {{std.dep}}</h3>
+      <h3> GPA:  {{ std.gpa }}</h3>
+      <h3>Advisor:    {{std.advisor}} </h3>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
+
+

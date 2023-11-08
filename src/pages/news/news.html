@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>News</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-card *ngFor="let nws of news">
+    <img [src]="nws.urlToImage" *ngIf="nws.urlToImage" alt="News Image" />
+    <ion-card-content>
+      <ion-card-title>
+        {{ nws.title }}
+      </ion-card-title>
+      <p>{{ nws.description }}</p>
+    </ion-card-content>
+    <ion-row no-padding>
+      
+      <ion-col>
+        <button ion-button icon-left color="danger" clear small>
+          <ion-icon name="globe"></ion-icon>
+          <a href="{{nws.url}}">แหล่งข่าว</a>
+        </button>
+      </ion-col>
+
+      <ion-col>
+        <button ion-button icon-left color="danger" clear small>
+          <ion-icon name="person"></ion-icon>
+          {{ nws.author }}
+        </button>
+      </ion-col>
+      <ion-col>
+        <button ion-button icon-left color="danger" clear small>
+          <ion-icon name="calendar"></ion-icon>
+          {{ nws.publishedAt | date: 'dd/MM/yyyy' }}
+        </button>
+      </ion-col>
+    </ion-row>
+  </ion-card>
+  <div *ngIf="errorMessage" class="error-message">
+    {{ errorMessage }}
+  </div>
+</ion-content>
