@@ -38,8 +38,24 @@ $colors: (
   secondary:  #32db64,
   danger:     #f53d3d,
   light:      #f4f4f4,
-  dark:       #222
+  dark:       #222,
+  wan1:      #d786fa,
+  wan2:       #f78eb5,
+  wan3:     #FFCDA8,
+  wan4:     #FFE7CE
 );
+
+// @font-face {
+//   font-family: 'San Fransico';
+//   src: url('../assets/fonts/sanfransico.ttf');//mine
+//   src: url('path/to/your/font/file');//path to your font file
+// }
+
+* {
+  font-family: 'Kanit';
+}
+
+
 
 
 // App iOS Variables

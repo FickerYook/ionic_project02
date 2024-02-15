@@ -1,0 +1,22 @@
+
+<ion-header>
+  <ion-navbar color="danger">
+    <ion-title>รายการวิดีโอ</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+
+    <ion-list>
+      <button ion-item *ngFor="let vd of videos | async " (click)="openVideo(vd)">
+        <ion-thumbnail item-left>
+          <img src="{{vd.snippet.thumbnails.standard.url}}">
+        </ion-thumbnail>
+        <h2>{{ vd.snippet.title }}</h2>
+        <p>{{ vd.snippet.description }}</p>
+      </button>
+    </ion-list>
+    
+  <!-- end -->
+</ion-content>

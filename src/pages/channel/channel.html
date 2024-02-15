@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-navbar color="danger">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>ช่องยูทูป</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  
+  <ion-item >
+        <ion-label stacked >รหัสช่อง YouTube</ion-label>
+        <ion-input type="text" [(ngModel)]="channelId"> </ion-input>
+  </ion-item>
+
+    <button ion-button full (click)="searchPlaylists()" [disabled]="channelId === ' '" color="danger">
+      Search Playlists</button>
+    
+    <!-- <ion-list  no-padding>
+      <ion-item *ngFor="let l of playlists | async " (click)="openPlaylist(list.id)" >
+      
+      </ion-item>
+    </ion-list> -->
+
+    <ion-list>
+      <button ion-item *ngFor="let l of playlists | async " (click)="openPlaylist(l.id)" >
+        <ion-thumbnail item-left>
+          <img src="{{l.snippet.thumbnails.high.url}}">
+        </ion-thumbnail>
+        <h2>{{ l.snippet.title }}</h2>
+        <p>{{ l.snippet.publishedAt | date: 'short' }}</p>
+      </button>
+    </ion-list>
+
+
+<!-- end -->
+</ion-content>

@@ -12,23 +12,41 @@ import { StudentPage } from '../pages/student/student';
 import { HttpClientModule } from '@angular/common/http';
 import { NewsPage } from '../pages/news/news';
 import { NewsServiceProvider } from '../providers/news-service/news-service';
-
+import { FIREBASE_CONFIG } from './app.firebase.config';
 import { YoutubeVideoPlayer } from '@ionic-native/youtube-video-player';
 import { HttpModule } from '@angular/http'; 
-import { YoutubePage } from '../pages/youtube/youtube';
+// import { YoutubePage } from '../pages/youtube/youtube';
+import { PlaylistPage } from '../pages/playlist/playlist';
+import { ChannelPage } from '../pages/channel/channel';
+import { YtProvider } from '../providers/yt/yt';
+import { AboutPage } from '../pages/about/about';
+import { LoginPage } from '../pages/login/login';
+import { RegisterPage } from '../pages/register/register';
+import { AngularFireModule } from 'angularfire2'    // import AngularFireModel from install npm
+import { AngularFireAuthModule } from 'angularfire2/auth'; // import  AngularFireAuthModule
+
+
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
     StudentPage,
     NewsPage,
-    YoutubePage
+    // YoutubePage,
+    PlaylistPage,
+    ChannelPage,
+    AboutPage,
+    LoginPage,
+    RegisterPage,
+  
   ],
   imports: [
     HttpModule,
     HttpClientModule,
     BrowserModule,
     IonicModule.forRoot(MyApp),
+    AngularFireModule.initializeApp(FIREBASE_CONFIG), //import angular module
+    AngularFireAuthModule    //import AngularFireAuthModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -36,7 +54,12 @@ import { YoutubePage } from '../pages/youtube/youtube';
     HomePage,
     StudentPage,
     NewsPage,
-    YoutubePage
+    // YoutubePage,
+    PlaylistPage,
+    ChannelPage,
+    AboutPage,
+    LoginPage,
+    RegisterPage,
   ],
   providers: [
     YoutubeVideoPlayer,
@@ -44,7 +67,8 @@ import { YoutubePage } from '../pages/youtube/youtube';
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     StudentServiceProvider,
-    NewsServiceProvider
+    NewsServiceProvider,
+    YtProvider
   ]
 })
 export class AppModule {}

@@ -1,0 +1,28 @@
+
+<!-- start content -->
+<ion-content class="bg" padding>
+
+    <img src="../../assets/imgs/student.png" alt="login">
+    <br>
+      <ion-item >
+        <ion-label floating>อีเมล์</ion-label>
+        <ion-input type="email" [(ngModel)]="user.email" ></ion-input>
+      </ion-item>
+
+    <ion-item >
+      <ion-label  floating >รหัสผ่าน</ion-label>
+      <ion-input type="password" [(ngModel)]="user.password" ></ion-input>
+    </ion-item>
+  <br>
+
+    <ion-row>
+        <ion-col col-7>
+            <button ion-button full color="wan1" (click)="login(user)" >เข้าสู่ระบบ</button>
+        </ion-col>
+        <ion-col col-5>
+          <button ion-button full color="wan2" (click)="register()" >ละทะเบียน</button>
+      </ion-col>
+    </ion-row>
+
+  <!-- end content -->
+</ion-content>
