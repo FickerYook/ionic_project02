@@ -26,6 +26,12 @@
     "@ionic-native/youtube-video-player": "^4.20.0",
     "@ionic/storage": "2.2.0",
     "angularfire2": "^4.0.0-rc.0",
+    "cordova-android": "7.0.0",
+    "cordova-plugin-device": "^2.0.2",
+    "cordova-plugin-ionic-keyboard": "^2.2.0",
+    "cordova-plugin-ionic-webview": "^5.0.1",
+    "cordova-plugin-splashscreen": "^5.0.2",
+    "cordova-plugin-statusbar": "^2.4.2",
     "cordova-plugin-youtube-video-player": "^2.4.0",
     "firebase": "^4.0.0",
     "ionic-angular": "3.9.9",
@@ -41,7 +47,15 @@
   "description": "An Ionic project",
   "cordova": {
     "plugins": {
-      "cordova-plugin-youtube-video-player": {}
-    }
+      "cordova-plugin-youtube-video-player": {},
+      "cordova-plugin-statusbar": {},
+      "cordova-plugin-device": {},
+      "cordova-plugin-splashscreen": {},
+      "cordova-plugin-ionic-webview": {},
+      "cordova-plugin-ionic-keyboard": {}
+    },
+    "platforms": [
+      "android"
+    ]
   }
 }
